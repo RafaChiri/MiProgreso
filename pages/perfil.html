@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Pantalla de perfil del usuario de MiProgreso">
+    <meta name="author" content="Carlos López, Matías Mite, Rafael Chiriboga">
+
+    <title>MiProgreso | Perfil</title>
+</head>
+
+<body>
+
+    <!-- ================= HEADER ================= -->
+
+    <header>
+
+        <div class="logo">
+            <img src="../img/logo-miprogreso.png" alt="Logotipo oficial de MiProgreso">
+        </div>
+
+        <nav aria-label="Menú superior">
+
+            <a href="#" aria-label="Perfil del usuario">
+                <img src="../img/icon-user.png" alt="Icono de perfil">
+            </a>
+
+            <a href="#" aria-label="Buscar">
+                <img src="../img/icon-search.png" alt="Icono de búsqueda">
+            </a>
+
+            <a href="#" aria-label="Menú principal">
+                <img src="../img/icon-menu.png" alt="Icono del menú principal">
+            </a>
+
+        </nav>
+
+    </header>
+
+    <!-- ================= MAIN ================= -->
+
+    <main>
+
+        <!-- Información personal -->
+
+        <section aria-labelledby="titulo-perfil">
+
+            <h1 id="titulo-perfil">
+                Información Personal
+            </h1>
+
+            <article>
+
+                <img src="../img/user-profile.png"
+                    alt="Imagen de perfil del usuario">
+
+                <h2>
+                    Nombre de Usuario
+                </h2>
+
+            </article>
+
+            <form>
+
+                <div>
+
+                    <label for="correo">
+                        Dirección de correo electrónico
+                    </label>
+
+                    <input
+                        type="email"
+                        id="correo"
+                        name="correo"
+                        value="User124@email.com">
+
+                    <button type="button">
+                        Editar
+                    </button>
+
+                </div>
+
+                <br>
+
+                <div>
+
+                    <label for="telefono">
+                        Número de teléfono
+                    </label>
+
+                    <input
+                        type="tel"
+                        id="telefono"
+                        name="telefono"
+                        value="0912345678">
+
+                    <button type="button">
+                        Editar
+                    </button>
+
+                </div>
+
+                <br>
+
+                <div>
+
+                    <label for="fecha">
+                        Fecha de nacimiento
+                    </label>
+
+                    <input
+                        type="date"
+                        id="fecha"
+                        name="fecha">
+
+                    <button type="button">
+                        Editar
+                    </button>
+
+                </div>
+
+            </form>
+
+        </section>
+
+        <!-- Preferencias del sistema -->
+
+        <section aria-labelledby="titulo-preferencias">
+
+            <h2 id="titulo-preferencias">
+                Preferencias del Sistema
+            </h2>
+
+            <form>
+
+                <div>
+
+                    <label for="tema">
+                        Tema
+                    </label>
+
+                    <select
+                        id="tema"
+                        name="tema">
+
+                        <option>
+                            Claro
+                        </option>
+
+                        <option selected>
+                            Oscuro
+                        </option>
+
+                    </select>
+
+                </div>
+
+                <br>
+
+                <div>
+
+                    <label for="idioma">
+                        Idioma
+                    </label>
+
+                    <select
+                        id="idioma"
+                        name="idioma">
+
+                        <option selected>
+                            Español
+                        </option>
+
+                        <option>
+                            English
+                        </option>
+
+                    </select>
+
+                </div>
+
+                <br>
+
+                <div>
+
+                    <label for="recomendacion">
+                        Recomendación de entrenamiento
+                    </label>
+
+                    <select
+                        id="recomendacion"
+                        name="recomendacion">
+
+                        <option selected>
+                            Diario
+                        </option>
+
+                        <option>
+                            Semanal
+                        </option>
+
+                        <option>
+                            Personalizado
+                        </option>
+
+                    </select>
+
+                </div>
+
+                <br>
+
+                <div>
+
+                    <label for="unidad">
+                        Unidad de medida
+                    </label>
+
+                    <select
+                        id="unidad"
+                        name="unidad">
+
+                        <option selected>
+                            Kilogramos (kg)
+                        </option>
+
+                        <option>
+                            Libras (lb)
+                        </option>
+
+                    </select>
+
+                </div>
+
+                <br>
+
+                <div>
+
+                    <label for="formato">
+                        Formato de fecha
+                    </label>
+
+                    <select
+                        id="formato"
+                        name="formato">
+
+                        <option selected>
+                            DD/MM/AAAA
+                        </option>
+
+                        <option>
+                            MM/DD/AAAA
+                        </option>
+
+                    </select>
+
+                </div>
+
+                <br>
+
+                <div>
+
+                    <label for="notificaciones">
+                        Notificaciones
+                    </label>
+
+                    <select
+                        id="notificaciones"
+                        name="notificaciones">
+
+                        <option selected>
+                            Activado
+                        </option>
+
+                        <option>
+                            Desactivado
+                        </option>
+
+                    </select>
+
+                </div>
+
+            </form>
+
+        </section>
+
+        <!-- Guardar cambios -->
+
+        <section aria-label="Guardar cambios">
+
+            <button type="submit">
+                Guardar Cambios
+            </button>
+
+        </section>
+
+    </main>
+
+    <!-- ================= FOOTER ================= -->
+
+    <footer>
+
+        <div class="footer-brand">
+
+            <img src="../img/logo-miprogreso.png"
+                alt="Logotipo de MiProgreso">
+
+        </div>
+
+        <section aria-label="Información del sitio">
+
+            <article>
+
+                <h3>
+                    Texto
+                </h3>
+
+                <p>
+                    Información general de la plataforma.
+                </p>
+
+            </article>
+
+            <article>
+
+                <h3>
+                    Texto
+                </h3>
+
+                <p>
+                    Políticas y privacidad.
+                </p>
+
+            </article>
+
+            <article>
+
+                <h3>
+                    Texto
+                </h3>
+
+                <p>
+                    Contacto y soporte.
+                </p>
+
+            </article>
+
+        </section>
+
+        <nav aria-label="Redes sociales">
+
+            <a href="https://facebook.com">
+                <img src="../img/facebook.png"
+                    alt="Facebook">
+            </a>
+
+            <a href="https://instagram.com">
+                <img src="../img/instagram.png"
+                    alt="Instagram">
+            </a>
+
+            <a href="https://x.com">
+                <img src="../img/x.png"
+                    alt="Red social X">
+            </a>
+
+        </nav>
+
+    </footer>
+
+</body>
+
+</html>
