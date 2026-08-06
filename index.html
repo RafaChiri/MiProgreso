@@ -4,110 +4,182 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>MiProgreso - Dashboard</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
-    <header>
+
+    <header class="main-header">
         <div class="logo">
-            <img src="img/logo-miprogreso.png" alt="Logotipo oficial de MiProgreso">
+            <a href="index.html">
+                <img src="img/logo-miprogreso.png" alt="Logotipo oficial de MiProgreso">
+            </a>
         </div>
+
         <div class="search-box">
-            <label for="input-buscar">Buscar:</label>
-            <input type="search" id="input-buscar" name="busqueda" placeholder="Buscar...">
+            <label for="input-buscar" class="sr-only">Buscar</label>
+            <input type="search" id="input-buscar" name="busqueda" class="form-input" placeholder="Buscar...">
         </div>
+
         <div class="user-profile">
-            <img src="img/user-icon.png" alt="Icono de perfil de usuario" aria-label="Menú de usuario">
+            <a href="perfil.html" aria-label="Menú de usuario">
+                <img src="img/user-icon.png" alt="Icono de perfil de usuario">
+            </a>
         </div>
     </header>
 
-    <nav>
-        <ul>
-            <li><a href="pages/entrenar.html">Entrenar</a></li>
-            <li><a href="#">Rutinas</a></li>
-            <li><a href="#">Historial</a></li>
-            <li><a href="pages/progreso.html">Progreso</a></li>
-            <li><a href="pages/perfil.html">Perfil</a></li>
-        </ul>
-    </nav>
+    <div class="app-container">
+        
+        <nav class="main-nav">
+            <ul>
+                <li>
+                    <a href="pages/entrenar.html" class="nav-btn active">
+                        <img src="img/icon-dumbbell.png" alt="" class="nav-icon">
+                        <span>ENTRENAR</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="rutinas.html" class="nav-btn">
+                        <img src="img/icon-clipboard.png" alt="" class="nav-icon">
+                        <span>RUTINAS</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="historial.html" class="nav-btn">
+                        <img src="img/icon-history.png" alt="" class="nav-icon">
+                        <span>HISTORIAL</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="progreso.html" class="nav-btn">
+                        <img src="img/icon-progress.png" alt="" class="nav-icon">
+                        <span>PROGRESO</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="perfil.html" class="nav-btn">
+                        <img src="img/icon-user.png" alt="" class="nav-icon">
+                        <span>PERFIL</span>
+                    </a>
+                </li>
+                <li>
+                    <button class="nav-btn" disabled>
+                        <span>COMUNIDAD</span>
+                    </button>
+                </li>
+            </ul>
+        </nav>
 
-    <main>
+        <main class="main-content">
 
-    <section class="banner-bienvenida">
+            <section class="banner-bienvenida">
+                <article class="banner-texto">
+                    <h2>Hola, <span class="highlight">Usuario</span>.</h2>
+                    <p>¡Te damos la bienvenida a MiProgreso!</p>
+                </article>
 
-        <article>
-            <h2>Hola, <span>Usuario</span>.</h2>
-            <p>¡Te damos la bienvenida a MiProgreso!</p>
-        </article>
+                <div class="banner-imagen">
+                    <img src="img/banner-deportistas.jpg" alt="Atletas listos para entrenar">
+                </div>
+            </section>
 
-        <div class="banner-imagen">
-            <img src="img/banner-deportistas.jpg"
-                 alt="Pareja de atletas sonrientes listos para entrenar en MiProgreso">
-        </div>
+            <section class="tarjetas-dashboard">
+                <article class="tarjeta tarjeta-activa">
+                    <a href="entrenar.html">
+                        <h3>ENTRENAR</h3>
+                        <img src="img/icon-dumbbell.png" alt="Icono entrenar">
+                    </a>
+                </article>
 
-    </section>
+                <article class="tarjeta">
+                    <a href="rutinas.html">
+                        <h3>RUTINAS</h3>
+                        <img src="img/icon-clipboard.png" alt="Icono rutinas">
+                    </a>
+                </article>
 
-    <section class="tarjetas-dashboard">
+                <article class="tarjeta">
+                    <a href="historial.html">
+                        <h3>HISTORIAL</h3>
+                        <img src="img/icon-history.png" alt="Icono historial">
+                    </a>
+                </article>
+            </section>
 
-        <article class="tarjeta">
-            <a href="#entrenar">
-                <h3>ENTRENAR</h3>
-                <img src="img/icon-dumbbell.png"
-                     alt="Icono de mancuerna para la sección de entrenar">
-            </a>
-        </article>
+            <section class="seccion-formulario">
+                <h3>Registro Rápido de Serie</h3>
+                <form class="form-grid">
+                    <div class="form-group">
+                        <label for="ejercicio">Ejercicio</label>
+                        <input type="text" id="ejercicio" class="form-input" placeholder="Ej. Press de Banca">
+                    </div>
 
-        <article class="tarjeta">
-            <a href="#rutinas">
-                <h3>RUTINAS</h3>
-                <img src="img/icon-clipboard.png"
-                     alt="Icono de portapapeles para la sección de rutinas">
-            </a>
-        </article>
+                    <div class="form-group">
+                        <label for="peso">Peso en kg</label>
+                        <input type="text" id="peso" class="form-input input-focused" value="80 kg">
+                    </div>
 
-        <article class="tarjeta">
-            <a href="#historial">
-                <h3>HISTORIAL</h3>
-                <img src="img/icon-history.png"
-                     alt="Icono de reloj para la sección de historial">
-            </a>
-        </article>
+                    <div class="form-group">
+                        <label for="reps-error">Repeticiones</label>
+                        <div class="input-error-wrapper">
+                            <input type="text" id="reps-error" class="form-input input-error" value="Failed text">
+                            <span class="error-badge">!</span>
+                        </div>
+                        <span class="error-text">Error text</span>
+                    </div>
 
-    </section>
-    </main>
+                    <div class="form-group form-actions">
+                        <button type="submit" class="btn btn-primary">Guardar</button>
+                        <button type="button" class="btn btn-secondary">Cancelar</button>
+                        <button type="button" class="btn btn-primary" disabled>Desactivado</button>
+                    </div>
+                </form>
+            </section>
+
+        </main>
+    </div>
+
     <footer>
-                <div class="footer-brand">
-            <img src="img/logo-miprogreso.png" alt="Logotipo institucional de MiProgreso en pie de página">
+        <div class="footer-brand">
+            <img src="img/logo-miprogreso.png" alt="Logotipo MiProgreso">
             <div class="social-links">
-                <a href="https://facebook.com" aria-label="Visítanos en Facebook">
-                    <img src="img/facebook-icon.png" alt="Logo de Facebook">
+                <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
+                    <img src="img/facebook-icon.png" alt="Facebook">
                 </a>
-                <a href="https://instagram.com" aria-label="Visítanos en Instagram">
-                    <img src="img/instagram-icon.png" alt="Logo de Instagram">
+                <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+                    <img src="img/instagram-icon.png" alt="Instagram">
                 </a>
-                <a href="https://x.com" aria-label="Visítanos en X">
-                    <img src="img/x-icon.png" alt="Logo de X">
+                <a href="https://x.com" target="_blank" rel="noopener noreferrer" aria-label="X">
+                    <img src="img/x-icon.png" alt="X">
                 </a>
             </div>
         </div>
+
         <div class="footer-columns">
             <article class="columna-texto">
-                <h4>Texto</h4>
-                <p>Información y soporte para optimizar tu rendimiento físico diario.</p>
-                <p>Control de pesos y repeticiones a tu alcance.</p>
-                <p>Plataforma web oficial de seguimiento.</p>
+                <h4>Soporte</h4>
+                <p>Información y soporte técnico.</p>
+                <p>Control de pesos y repeticiones.</p>
+                <p>Plataforma web oficial.</p>
             </article>
             <article class="columna-texto">
-                <h4>Texto</h4>
-                <p>Términos y condiciones de uso de la comunidad.</p>
-                <p>Políticas de privacidad y manejo de datos personales.</p>
-                <p>Preguntas frecuentes sobre tus rutinas.</p>
+                <h4>Legales</h4>
+                <p>Términos y condiciones.</p>
+                <p>Políticas de privacidad.</p>
+                <p>Preguntas frecuentes.</p>
             </article>
             <article class="columna-texto">
-                <h4>Texto</h4>
-                <p>Contacto directo con soporte técnico y entrenadores.</p>
-                <p>Ubicación de centros de entrenamiento asociados.</p>
-                <p>Versión actual del sistema web.</p>
+                <h4>Contacto</h4>
+                <p>Soporte directo.</p>
+                <p>Ubicación de centros.</p>
+                <p>Versión del sistema.</p>
             </article>
         </div>
     </footer>
+
 </body>
 </html>
