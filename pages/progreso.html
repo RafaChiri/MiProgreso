@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MiProgreso - Registro</title>
+    <title>MiProgreso - Resumen</title>
 </head>
 <body>
 
@@ -25,77 +25,100 @@
     <nav>
         <ul>
             <li><a href="../index.html">Inicio</a></li>
+            <li><a href="entrenar.html">Entrenar</a></li>
             <li><a href="#">Rutinas</a></li>
             <li><a href="#">Historial</a></li>
-            <li><a href="progreso.html">Progreso</a></li>
             <li><a href="perfil.html">Perfil</a></li>
         </ul>
     </nav>
 
     <main>
 
-        <section class="registro-entrenamiento">
+        <section class="resumen-general">
 
             <article>
-                <h2>Registro de Entrenamiento</h2>
-                <p>PRESS DE BANCA</p>
+
+                <h2>Resumen General</h2>
+
+                <p>Tu progreso semanal</p>
+
             </article>
 
         </section>
 
-        <section class="tabla-registro">
+        <section class="estadisticas-dashboard">
 
-            <table>
+            <article class="tarjeta">
 
-                <thead>
+                <h3>Entrenamientos</h3>
 
-                    <tr>
-                        <th>Serie</th>
-                        <th>KG</th>
-                        <th>REPS</th>
-                        <th>✔</th>
-                    </tr>
+                <p>28</p>
 
-                </thead>
+            </article>
 
-                <tbody>
+            <article class="tarjeta">
 
-                    <tr>
-                        <td>1</td>
-                        <td><input type="number" id="kg1" name="kg1" value="20"></td>
-                        <td><input type="number" id="rep1" name="rep1" value="10"></td>
-                        <td><input type="checkbox" id="serie1" name="serie1" checked></td>
-                    </tr>
+                <h3>Días activos</h3>
 
-                    <tr>
-                        <td>2</td>
-                        <td><input type="number" id="kg2" name="kg2"></td>
-                        <td><input type="number" id="rep2" name="rep2"></td>
-                        <td><input type="checkbox" id="serie2" name="serie2"></td>
-                    </tr>
+                <p>7</p>
 
-                    <tr>
-                        <td>3</td>
-                        <td><input type="number" id="kg3" name="kg3"></td>
-                        <td><input type="number" id="rep3" name="rep3"></td>
-                        <td><input type="checkbox" id="serie3" name="serie3"></td>
-                    </tr>
+            </article>
 
-                </tbody>
+            <article class="tarjeta">
 
-            </table>
+                <h3>Calorías</h3>
+
+                <p>2450 kcal</p>
+
+            </article>
 
         </section>
 
-        <section class="acciones-registro">
+        <section class="progreso-fisico">
 
-            <button type="button">
-                + Agregar Serie
-            </button>
+            <article>
 
-            <button type="submit">
-                Finalizar Entrenamiento
-            </button>
+                <h3>Evolución Física</h3>
+
+                <img src="../img/grafico-peso.png"
+                     alt="Gráfico de evolución del peso corporal">
+
+            </article>
+
+        </section>
+
+        <section class="avance-semanal">
+
+            <article>
+
+                <h3>Avance Semanal</h3>
+
+                <label for="semana">
+                    Seleccionar semana:
+                </label>
+
+                <select id="semana" name="semana">
+
+                    <option selected>
+                        Semana 1
+                    </option>
+
+                    <option>
+                        Semana 2
+                    </option>
+
+                    <option>
+                        Semana 3
+                    </option>
+
+                </select>
+
+                <br><br>
+
+                <img src="../img/grafico-avance.png"
+                     alt="Gráfico del avance semanal">
+
+            </article>
 
         </section>
 
@@ -128,24 +151,39 @@
         <div class="footer-columns">
 
             <article class="columna-texto">
+
                 <h4>Texto</h4>
+
                 <p>Información y soporte para optimizar tu rendimiento físico diario.</p>
+
                 <p>Control de pesos y repeticiones a tu alcance.</p>
+
                 <p>Plataforma web oficial de seguimiento.</p>
+
             </article>
 
             <article class="columna-texto">
+
                 <h4>Texto</h4>
+
                 <p>Términos y condiciones de uso de la comunidad.</p>
+
                 <p>Políticas de privacidad y manejo de datos personales.</p>
+
                 <p>Preguntas frecuentes sobre tus rutinas.</p>
+
             </article>
 
             <article class="columna-texto">
+
                 <h4>Texto</h4>
+
                 <p>Contacto directo con soporte técnico y entrenadores.</p>
+
                 <p>Ubicación de centros de entrenamiento asociados.</p>
+
                 <p>Versión actual del sistema web.</p>
+
             </article>
 
         </div>
