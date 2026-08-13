@@ -1,13 +1,16 @@
 /* ==========================================================================
-   1. VARIABLES
+   1. VARIABLES DE TEMA Y DISEÑO
    ========================================================================== */
 :root {
-  --color-primary: #FFD200;
-  --color-secondary: #1E1E1E;
-  --color-tertiary: #121212;
+  --color-primary: #FFD200;       /* Botones e highlights */
+  --color-primary-hover: #E6C200; /* Hover de botones */
+  --color-bg-main: #121212;      /* Fondo principal (.main-content) */
+  --color-bg-surface: #1E1E1E;   /* Navbar, Sidebar, Footer y Tarjetas */
+  --color-border: #444444;
   --color-text-1: #000000;
   --color-text-2: #FFFFFF;
   --color-text-3: #A0A0A0;
+  --color-text-muted: #888888;
   --font-family: 'Inter', system-ui, -apple-system, sans-serif;
   --radius-sm: 8px;
   --radius-md: 16px;
@@ -15,7 +18,7 @@
 }
 
 /* ==========================================================================
-   2. ESTILOS GENERALES
+   2. ESTILOS GENERALES Y REUTILIZABLES
    ========================================================================== */
 * {
   box-sizing: border-box;
@@ -25,14 +28,13 @@
 
 body {
   font-family: var(--font-family);
-  background-color: var(--color-tertiary);
+  background-color: var(--color-bg-surface); /* #1E1E1E */
   color: var(--color-text-2);
   line-height: 1.4;
   min-height: 100vh;
-  display: flex;
-  flex-direction: column;
 }
 
+/* Accesibilidad */
 .sr-only {
   position: absolute;
   width: 1px;
@@ -44,36 +46,51 @@ body {
   border: 0;
 }
 
-/* ==========================================================================
-   3. NAVEGACIÓN
-   ========================================================================== */
-.main-header {
-  background-color: var(--color-tertiary);
-  padding: 1.2rem 2.5rem;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+/* Contenedores Principales */
+.app-container {
+  padding: 0 2.5rem 2.5rem 2.5rem;
+  background-color: var(--color-bg-surface); /* #1E1E1E */
 }
 
+.main-content {
+  background-color: var(--color-bg-main); /* #121212 */
+  border-radius: var(--radius-lg);
+  padding: 2.5rem;
+}
+
+/* Encabezado General (Navbar) */
+.main-header {
+  background-color: var(--color-bg-surface); /* #1E1E1E */
+  padding: 1.2rem 2.5rem;
+}
+
+.logo img {
+  height: 38px;
+  width: auto;
+}
+
+.user-profile img {
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  cursor: pointer;
+  object-fit: cover;
+}
+
+/* Navegación Lateral (Sidebar) */
 .main-nav {
   width: 180px;
-  flex-shrink: 0;
+  background-color: var(--color-bg-surface); /* #1E1E1E */
 }
 
 .main-nav ul {
   list-style: none;
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
 }
 
 .nav-btn {
-  display: flex;
-  align-items: center;
-  gap: 0.75rem;
   width: 100%;
   padding: 0.75rem 1rem;
-  background-color: var(--color-primary);
+  background-color: var(--color-primary); /* #FFD200 */
   color: var(--color-text-1);
   border: none;
   border-radius: var(--radius-md);
@@ -88,32 +105,63 @@ body {
   object-fit: contain;
 }
 
-/* ==========================================================================
-   4. BOTONES & FORMULARIOS
-   ========================================================================== */
-.search-box input {
-  background-color: var(--color-tertiary);
-  border: 1px solid #444;
+/* Buscadores */
+.search-box input,
+.search-ejercicio input {
+  width: 100%;
+  background-color: var(--color-bg-main); /* #121212 */
+  border: 1px solid var(--color-border);
   color: var(--color-text-2);
-  padding: 0.55rem 1.2rem;
+  padding: 0.6rem 1.2rem;
   border-radius: 50px;
-  width: 300px;
   outline: none;
+  font-family: var(--font-family);
 }
 
-/* ==========================================================================
-   5. TARJETAS
-   ========================================================================== */
-.tarjetas-dashboard {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 2rem;
+.search-box input {
+  width: 300px;
 }
 
+.search-ejercicio {
+  width: 100%;
+  max-width: 320px;
+}
+
+/* Botones Reutilizables */
+.btn-comenzar,
+.btn-nueva-rutina {
+  background-color: var(--color-primary); /* #FFD200 */
+  color: var(--color-text-1);
+  border: none;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.btn-comenzar {
+  width: 100%;
+  padding: 14px;
+  border-radius: var(--radius-sm);
+  font-size: 1rem;
+  margin-top: 10px;
+}
+
+.btn-nueva-rutina {
+  padding: 10px 22px;
+  border-radius: 20px;
+  font-size: 0.95rem;
+}
+
+.btn-comenzar:hover,
+.btn-nueva-rutina:hover {
+  background-color: var(--color-primary-hover);
+}
+
+/* Tarjetas Globales (Sin bordes) */
 .tarjeta {
   border-radius: var(--radius-md);
-  background-color: var(--color-secondary);
-  border: 1.5px solid var(--color-primary);
+  background-color: var(--color-bg-surface); /* #1E1E1E */
+  border: none;
   text-align: center;
   padding: 2.5rem 1.5rem;
 }
@@ -121,10 +169,6 @@ body {
 .tarjeta a {
   text-decoration: none;
   color: var(--color-text-2);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 1.2rem;
 }
 
 .tarjeta h3 {
@@ -147,47 +191,39 @@ body {
   color: var(--color-text-1);
 }
 
-/* ==========================================================================
-   6. ESTILOS ESPECÍFICOS (Dashboard, Footer, etc.)
-   ========================================================================== */
-.logo img {
-  height: 38px;
+/* Pie de Página (Footer) */
+footer {
+  background-color: var(--color-bg-surface); /* #1E1E1E */
+  padding: 2rem 2.5rem;
+}
+
+.footer-brand img {
+  height: 32px;
   width: auto;
 }
 
-.user-profile img {
-  width: 38px;
-  height: 38px;
-  border-radius: 50%;
-  cursor: pointer;
-  object-fit: cover;
+.social-links img {
+  height: 28px;
+  width: auto;
 }
 
-.app-container {
-  display: flex;
-  gap: 2rem;
-  padding: 0 2.5rem 2.5rem 2.5rem;
-  flex: 1;
+.columna-texto p {
+  color: var(--color-text-3);
+  font-size: 0.95rem;
+  margin-bottom: 0.4rem;
 }
 
-.main-content {
-  flex: 1;
-  background-color: var(--color-secondary);
-  border-radius: var(--radius-lg);
-  padding: 2.5rem;
-  display: flex;
-  flex-direction: column;
-  gap: 2.5rem;
-}
 
+/* ==========================================================================
+   3. ESTILOS ESPECÍFICOS POR PÁGINA
+   ========================================================================== */
+
+/* --- DASHBOARD --- */
 .banner-bienvenida {
-  background: linear-gradient(90deg, #424242 0%, #2b2b2b 100%);
+  background: linear-gradient(90deg, #424242 0%, #2B2B2B 100%);
   border-radius: var(--radius-md);
   padding: 2rem 3rem;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  border: 1px solid #444;
+  border: none;
   overflow: hidden;
 }
 
@@ -197,7 +233,9 @@ body {
   text-align: center;
 }
 
-.banner-texto .highlight {
+.banner-texto .highlight,
+.tarjeta-historial .highlight,
+.login-link a {
   color: var(--color-primary);
 }
 
@@ -214,105 +252,23 @@ body {
   object-fit: contain;
 }
 
-footer {
-  background-color: var(--color-tertiary);
-  border-top: 1px solid #222;
-  padding: 2rem 2.5rem;
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-end;
-}
-
-.footer-brand {
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
-}
-
-.footer-brand img {
-  height: 32px;
-  width: auto;
-}
-
-.social-links img {
-  height: 28px;
-  width: auto;
-}
-
-.footer-columns {
-  display: flex;
-  gap: 4rem;
-}
-
-.columna-texto p {
-  color: var(--color-text-3);
-  font-size: 0.95rem;
-  margin-bottom: 0.4rem;
-}
-
-/* ==========================================================================
-   ESTILOS ESPECÍFICOS: HISTORIAL
-   ========================================================================== */
-
-/* Cabecera del contenido con título y buscador alineados */
-.content-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: 2rem;
-  flex-wrap: wrap;
-  gap: 1rem;
-}
-
+/* --- HISTORIAL --- */
 .content-header h1 {
   font-size: 2rem;
   font-weight: 800;
   letter-spacing: 1px;
 }
 
-.search-ejercicio {
-  width: 100%;
-  max-width: 320px;
-}
-
-.search-ejercicio input {
-  width: 100%;
-  background-color: var(--color-tertiary);
-  border: 1px solid #444;
-  color: var(--color-text-2);
-  padding: 0.6rem 1.2rem;
-  border-radius: 50px;
-  outline: none;
-  font-family: var(--font-family);
-}
-
-/* Contenedor y diseño de las tarjetas de historial */
-.cards-container {
-  display: flex;
-  flex-direction: column;
-  gap: 1.5rem;
-}
-
 .tarjeta-historial {
-  background-color: var(--color-tertiary);
-  border: 1px solid #333;
+  background-color: var(--color-bg-surface); /* #1E1E1E */
+  border: none;
   border-radius: var(--radius-md);
   padding: 1.2rem 2rem;
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
   text-align: center;
 }
 
-.tarjeta-historial .columna-dato {
-  display: flex;
-  flex-direction: column;
-  gap: 0.3rem;
-  flex: 1;
-}
-
 .tarjeta-historial .columna-dato:not(:last-child) {
-  border-right: 1px solid #444;
+  border-right: 1px solid var(--color-border);
 }
 
 .tarjeta-historial span:first-child {
@@ -326,153 +282,117 @@ footer {
   font-weight: 800;
 }
 
-.tarjeta-historial .highlight {
-  color: var(--color-primary);
-}
-
-/* ==========================================================================
-   MEDIA QUERY: RESPONSIVE PARA MÓVILES (Pantallas menores a 768px)
-   ========================================================================== */
-@media screen and (max-width: 768px) {
-  /* Ocultar el menú lateral de escritorio en móvil */
-  .main-nav {
-    display: none;
-  }
-
-  /* Ajustar el contenedor general a una sola columna */
-  .app-container {
-    flex-direction: column;
-    padding: 1rem;
-    gap: 1rem;
-  }
-
-  /* El contenido principal ocupa todo el ancho */
-  .main-content {
-    padding: 1.5rem 1rem;
-  }
-
-  /* Apilar el título y la barra de búsqueda en pantallas pequeñas */
-  .content-header {
-    flex-direction: column;
-    align-items: stretch;
-    gap: 1rem;
-  }
-
-  .search-ejercicio {
-    max-width: 100%;
-  }
-
-  /* Reducir padding de las tarjetas en móviles para que no desborden */
-  .tarjeta-historial {
-    padding: 1rem;
-  }
-
-  /* Ajustar el footer para que se apile de forma vertical */
-  footer {
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    gap: 2rem;
-    padding: 2rem 1rem;
-  }
-
-  .footer-columns {
-    flex-direction: column;
-    gap: 1.5rem;
-  }
-}
-
-/* ==========================================================================
-   ESTILOS ESPECÍFICOS: RUTINAS
-   ========================================================================== */
-
-/* Boton de anadir nueva rutina ubicado en la cabecera */
-.btn-nueva-rutina {
-    background-color: #ffd700;
-    color: #000000;
-    border: none;
-    padding: 10px 22px;
-    border-radius: 20px;
-    font-weight: 700;
-    font-size: 0.95rem;
-    cursor: pointer;
-    transition: background-color 0.2s ease;
-}
-
-.btn-nueva-rutina:hover {
-    background-color: #e6c200;
-}
-
-/* Contenedor en grilla para las tarjetas de rutinas */
-.rutinas-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
-    gap: 25px;
-    margin-top: 20px;
-}
-
-/* Tarjeta individual de rutina */
+/* --- RUTINAS --- */
 .tarjeta-rutina {
-    background-color: #242424;
-    border-radius: 12px;
-    padding: 20px;
-    display: flex;
-    align-items: center;
-    gap: 20px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+  background-color: var(--color-bg-surface); /* #1E1E1E */
+  border-radius: 12px;
+  padding: 20px;
+  border: none;
+  box-shadow: none;
 }
 
-/* Contenedor de la ilustracion muscular */
 .rutina-imagen {
-    width: 90px;
-    height: 110px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-shrink: 0;
+  width: 90px;
+  height: 110px;
 }
 
 .rutina-imagen img {
-    max-width: 100%;
-    max-height: 100%;
-    object-fit: contain;
-}
-
-/* Informacion interna de la tarjeta */
-.rutina-info {
-    flex: 1;
-    display: flex;
-    flex-direction: column;
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
 }
 
 .rutina-info h2 {
-    font-size: 1.4rem;
-    color: #ffffff;
-    margin-bottom: 6px;
-    font-weight: 700;
+  font-size: 1.4rem;
+  color: var(--color-text-2);
+  margin-bottom: 6px;
+  font-weight: 700;
 }
 
 .rutina-info p {
-    font-size: 0.85rem;
-    color: #b0b0b0;
-    margin-bottom: 4px;
+  font-size: 0.85rem;
+  color: #B0B0B0;
+  margin-bottom: 4px;
 }
 
-/* Boton de comenzar dentro de cada tarjeta */
-.btn-comenzar {
-    background-color: #ffd700;
-    color: #000000;
-    border: none;
-    width: 100%;
-    padding: 10px;
-    border-radius: 6px;
-    font-weight: 700;
-    font-size: 0.95rem;
-    cursor: pointer;
-    margin-top: 12px;
-    transition: background-color 0.2s ease;
+/* --- REGISTRO / AUTENTICACIÓN --- */
+.registro-page {
+  background-color: var(--color-bg-surface);
+  min-height: 100vh;
 }
 
-.btn-comenzar:hover {
-    background-color: #e6c200;
+.auth-container {
+  background-color: var(--color-bg-surface);
+  width: 900px;
+  height: 600px;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.auth-visual {
+  background: url('../img/login.png') center/cover no-repeat;
+  padding: 40px;
+}
+
+.logo-auth {
+  width: 180px;
+}
+
+.auth-form {
+  padding: 50px 60px;
+  color: var(--color-text-2);
+}
+
+.auth-form h1 {
+  font-size: 2rem;
+  margin-bottom: 25px;
+  font-weight: 700;
+}
+
+.auth-form input {
+  width: 100%;
+  padding: 14px;
+  margin-bottom: 12px;
+  background: transparent;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-sm);
+  color: var(--color-text-2);
+  font-size: 0.95rem;
+}
+
+.auth-form input::placeholder {
+  color: var(--color-text-muted);
+}
+
+.login-link {
+  margin-top: 15px;
+  font-size: 0.9rem;
+  color: #CCCCCC;
+}
+
+.login-link a {
+  text-decoration: none;
+}
+
+.social-divider {
+  margin: 20px 0;
+  text-align: center;
+  color: var(--color-text-muted);
+  font-size: 0.85rem;
+}
+
+.social-icons {
+  text-align: center;
+  margin-bottom: 15px;
+}
+
+.social-icons img {
+  max-width: 120px;
+}
+
+.terms {
+  font-size: 0.7rem;
+  color: var(--color-text-muted);
+  text-align: center;
+  line-height: 1.2;
 }
