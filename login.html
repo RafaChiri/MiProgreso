@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MiProgreso | Crear Cuenta</title>
+    <link rel="stylesheet" href="css/registro.css">
+</head>
+<body class="registro-page">
+    <div class="auth-container">
+        <!-- Columna Izquierda: Imagen y Logo -->
+        <div class="auth-visual">
+            <img src="img/LOGO.png" alt="Logo MiProgreso" class="logo-auth">
+            <!-- Esta imagen de fondo se manejará desde CSS -->
+        </div>
+
+        <!-- Columna Derecha: Formulario -->
+        <div class="auth-form">
+            <h1>CREAR CUENTA</h1>
+            <form action="dashboard.html" method="POST">
+                <input type="text" placeholder="Nombre completo" required>
+                <input type="email" placeholder="Correo electrónico" required>
+                <input type="password" placeholder="Contraseña" required>
+                <input type="password" placeholder="Confirmar contraseña" required>
+                
+                <button type="submit" class="btn-comenzar">Comenzar</button>
+            </form>
+            
+            <p class="login-link">Ya tengo una cuenta. <a href="login.html">Iniciar sesión</a></p>
+            
+            <div class="social-divider">O registrate con</div>
+            <div class="social-icons">
+                <img src="img/redes.png" alt="Redes Sociales">
+            </div>
+            <p class="terms">Al registrarse, usted acepta nuestra Política de privacidad</p>
+        </div>
+    </div>
+</body>
+</html>
