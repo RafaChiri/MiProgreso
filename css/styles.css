@@ -381,3 +381,98 @@ footer {
     gap: 1.5rem;
   }
 }
+
+/* ==========================================================================
+   ESTILOS ESPECÍFICOS: RUTINAS
+   ========================================================================== */
+
+/* Boton de anadir nueva rutina ubicado en la cabecera */
+.btn-nueva-rutina {
+    background-color: #ffd700;
+    color: #000000;
+    border: none;
+    padding: 10px 22px;
+    border-radius: 20px;
+    font-weight: 700;
+    font-size: 0.95rem;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+.btn-nueva-rutina:hover {
+    background-color: #e6c200;
+}
+
+/* Contenedor en grilla para las tarjetas de rutinas */
+.rutinas-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    gap: 25px;
+    margin-top: 20px;
+}
+
+/* Tarjeta individual de rutina */
+.tarjeta-rutina {
+    background-color: #242424;
+    border-radius: 12px;
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+}
+
+/* Contenedor de la ilustracion muscular */
+.rutina-imagen {
+    width: 90px;
+    height: 110px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.rutina-imagen img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+}
+
+/* Informacion interna de la tarjeta */
+.rutina-info {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.rutina-info h2 {
+    font-size: 1.4rem;
+    color: #ffffff;
+    margin-bottom: 6px;
+    font-weight: 700;
+}
+
+.rutina-info p {
+    font-size: 0.85rem;
+    color: #b0b0b0;
+    margin-bottom: 4px;
+}
+
+/* Boton de comenzar dentro de cada tarjeta */
+.btn-comenzar {
+    background-color: #ffd700;
+    color: #000000;
+    border: none;
+    width: 100%;
+    padding: 10px;
+    border-radius: 6px;
+    font-weight: 700;
+    font-size: 0.95rem;
+    cursor: pointer;
+    margin-top: 12px;
+    transition: background-color 0.2s ease;
+}
+
+.btn-comenzar:hover {
+    background-color: #e6c200;
+}
