@@ -396,3 +396,36 @@ footer {
   text-align: center;
   line-height: 1.2;
 }
+
+/* ==========================================================================
+  Header, Layout Principal y Sidebar (Flexbox)
+   ========================================================================== */
+
+/* Header general alineado en fila */
+.main-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+/* Contenedor principal que une Sidebar + Contenido */
+.app-container {
+  display: flex;
+  gap: 2rem;
+  align-items: flex-start;
+}
+
+/* Navegación lateral distribuida verticalmente */
+.main-nav ul {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+/* Botón interno del menú alineando ícono y texto */
+.nav-btn {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
