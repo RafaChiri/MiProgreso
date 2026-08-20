@@ -555,6 +555,359 @@ footer {
   box-sizing: border-box;
 }
 
+/* ==========================================================================
+   ESTILOS ESPECÍFICOS: PANTALLA PROGRESO
+   ========================================================================== */
+
+.progreso-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+}
+
+/* Tarjetas limpias sin bordes amarillos saturados */
+.tarjeta-progreso {
+    background-color: var(--color-bg-surface); /* #1E1E1E */
+    border-radius: var(--radius-md);
+    padding: 1.8rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+}
+
+.tarjeta-progreso h2 {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: var(--color-text-2);
+    border-bottom: 1px solid var(--color-border);
+    padding-bottom: 0.6rem;
+}
+
+/* Tarjeta de ancho completo para el avance semanal */
+.tarjeta-ancho-completo {
+    grid-column: span 2;
+}
+
+/* Sección Resumen General */
+.progreso-bar-container {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    background-color: #252525;
+    padding: 1rem;
+    border-radius: var(--radius-sm);
+}
+
+.progreso-info-text {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--color-text-3);
+}
+
+.barra-porcentaje {
+    width: 100%;
+    height: 10px;
+    background-color: var(--color-bg-main);
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+.progreso-fill {
+    height: 100%;
+    background-color: var(--color-primary); /* #FFD200 */
+    border-radius: 5px;
+}
+
+.stats-row {
+    display: flex;
+    gap: 1rem;
+}
+
+.stat-box {
+    flex: 1;
+    background-color: #252525;
+    padding: 0.8rem;
+    border-radius: var(--radius-sm);
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.stat-label {
+    font-size: 0.75rem;
+    color: var(--color-text-3);
+}
+
+.stat-value {
+    font-size: 1.1rem;
+    font-weight: 800;
+    color: var(--color-text-2);
+}
+
+/* Sección Evolución Física */
+.evo-metrics {
+    display: flex;
+    gap: 0.8rem;
+}
+
+.evo-badge {
+    background-color: #252525;
+    padding: 0.5rem 0.8rem;
+    border-radius: var(--radius-sm);
+    font-size: 0.85rem;
+    font-weight: 700;
+    color: var(--color-text-2);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.chart-placeholder {
+    height: 120px;
+    background-color: #252525;
+    border-radius: var(--radius-sm);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Avance Semanal (Gráfico de barras estético) */
+.avance-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid var(--color-border);
+    padding-bottom: 0.6rem;
+}
+
+.avance-header h2 {
+    border-bottom: none;
+    padding-bottom: 0;
+}
+
+.select-semana {
+    background-color: #252525;
+    padding: 0.4rem 1rem;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    border: 1px solid var(--color-border);
+    color: var(--color-text-2);
+}
+
+.bar-chart-mock {
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-end;
+    height: 140px;
+    padding: 1rem 0 0.5rem 0;
+    background-color: #252525;
+    border-radius: var(--radius-sm);
+    gap: 10px;
+}
+
+.bar-item {
+    width: 35px;
+    background-color: var(--color-primary);
+    border-radius: 4px 4px 0 0;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    padding-top: 4px;
+}
+
+.bar-item span {
+    font-size: 0.65rem;
+    font-weight: 700;
+    color: var(--color-text-1);
+    writing-mode: vertical-lr;
+    transform: rotate(180deg);
+}
+
+.mensaje-motivacional {
+    text-align: center;
+    color: var(--color-primary);
+    font-weight: 700;
+    font-size: 0.95rem;
+    margin-top: 0.5rem;
+}
+
+/* Responsive para dispositivos móviles */
+@media screen and (max-width: 768px) {
+    .progreso-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .tarjeta-ancho-completo {
+        grid-column: span 1;
+    }
+}
+
+/* ==========================================================================
+   ESTILOS ESPECÍFICOS: PANTALLA ENTRENAR
+   ========================================================================== */
+
+.entreno-container {
+    max-width: 800px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.ejercicio-titulo {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: var(--color-text-3);
+    margin-bottom: -0.5rem;
+}
+
+/* Contenedor tipo tarjeta limpia para la tabla */
+.tabla-entreno {
+    background-color: var(--color-bg-surface); /* #1E1E1E */
+    border-radius: var(--radius-md);
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+    border: 1px solid rgba(255, 255, 255, 0.04);
+}
+
+.entreno-row {
+    display: grid;
+    grid-template-columns: 1fr 2fr 2fr 60px;
+    gap: 1rem;
+    align-items: center;
+    padding: 0.6rem 1rem;
+    background-color: #252525;
+    border-radius: var(--radius-sm);
+}
+
+.entreno-header-row {
+    background-color: transparent;
+    font-weight: 700;
+    color: var(--color-text-3);
+    font-size: 0.85rem;
+    padding: 0.2rem 1rem;
+}
+
+.col-serie {
+    text-align: center;
+    font-weight: 700;
+    color: var(--color-text-2);
+}
+
+.entreno-header-row .col-serie,
+.entreno-header-row .col-kg,
+.entreno-header-row .col-reps {
+    text-align: center;
+}
+
+.col-kg input,
+.col-reps input {
+    width: 100%;
+    background-color: var(--color-bg-main);
+    border: 1px solid var(--color-border);
+    border-radius: 6px;
+    color: var(--color-text-2);
+    padding: 0.5rem;
+    text-align: center;
+    font-family: var(--font-family);
+    font-weight: 600;
+    font-size: 0.95rem;
+    outline: none;
+    transition: border-color 0.2s;
+}
+
+.col-kg input:focus,
+.col-reps input:focus {
+    border-color: var(--color-primary);
+}
+
+/* Botón de verificación (checkbox personalizado) */
+.col-check {
+    display: flex;
+    justify-content: center;
+}
+
+.btn-check {
+    width: 32px;
+    height: 32px;
+    border-radius: 6px;
+    background-color: var(--color-bg-main);
+    border: 1px solid var(--color-border);
+    color: transparent;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 800;
+    transition: all 0.2s ease;
+}
+
+.btn-check.activo {
+    background-color: var(--color-primary);
+    border-color: var(--color-primary);
+    color: var(--color-text-1);
+}
+
+.btn-check:hover {
+    border-color: var(--color-primary);
+}
+
+/* Botones de acciones inferiores */
+.entreno-actions {
+    display: flex;
+    justify-content: space-between;
+    gap: 1rem;
+    margin-top: 0.5rem;
+}
+
+.btn-secundario {
+    background-color: transparent;
+    border: 1px solid var(--color-primary);
+    color: var(--color-primary);
+    padding: 0.8rem 1.5rem;
+    border-radius: var(--radius-md);
+    font-weight: 700;
+    font-size: 0.95rem;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    flex: 1;
+}
+
+.btn-secundario:hover {
+    background-color: var(--color-primary);
+    color: var(--color-text-1);
+}
+
+.btn-principal {
+    background-color: var(--color-primary);
+    color: var(--color-text-1);
+    border: none;
+    padding: 0.8rem 1.5rem;
+    border-radius: var(--radius-md);
+    font-weight: 800;
+    font-size: 0.95rem;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+    flex: 1;
+    box-shadow: 0 4px 15px rgba(255, 210, 0, 0.2);
+}
+
+.btn-principal:hover {
+    background-color: var(--color-primary-hover);
+}
+
+/* Responsive para dispositivos móviles */
+@media screen and (max-width: 768px) {
+    .entreno-actions {
+        flex-direction: column;
+    }
+}
 
 /* ==========================================
    ESTILOS DE PERFIL - TEXTO BLANCO Y BOTONES NEGROS

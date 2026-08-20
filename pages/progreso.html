@@ -3,199 +3,187 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MiProgreso - Resumen</title>
-
-    <!-- 1. Importación de la fuente Inter desde Google Fonts -->
+    <title>MiProgreso - Progreso</title>
+    
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
-
-    <!-- 2. Tu hoja de estilos CSS personal -->
+    
     <link rel="stylesheet" href="../css/styles.css">
 </head>
 <body>
 
-    <header>
+    <header class="main-header">
+        <input type="checkbox" id="menu-toggle-checkbox" class="sr-only">
+
         <div class="logo">
-            <img src="../img/logo-miprogreso.png" alt="Logotipo oficial de MiProgreso">
+            <a href="../index.html">
+                <img src="../img/LOGO.png" alt="Logotipo oficial de MiProgreso">
+            </a>
         </div>
 
         <div class="search-box">
-            <label for="input-buscar">Buscar:</label>
-            <input type="search" id="input-buscar" name="busqueda" placeholder="Buscar...">
+            <label for="input-buscar" class="sr-only">Buscar</label>
+            <input type="search" id="input-buscar" name="busqueda" class="form-input" placeholder="Buscar...">
         </div>
 
-        <div class="user-profile">
-            <img src="../img/user-icon.png" alt="Icono de perfil de usuario" aria-label="Menú de usuario">
+        <div class="header-right-group">
+            <div class="user-profile">
+                <a href="perfil.html" aria-label="Menú de usuario">
+                    <img src="../img/perfil.png" alt="Icono de perfil de usuario">
+                </a>
+            </div>
+
+            <label for="menu-toggle-checkbox" class="menu-toggle" aria-label="Abrir menú">
+                <span></span>
+                <span></span>
+                <span></span>
+            </label>
         </div>
     </header>
 
-    <nav>
-        <ul>
-            <li><a href="../index.html">Inicio</a></li>
-            <li><a href="entrenar.html">Entrenar</a></li>
-            <li><a href="#">Rutinas</a></li>
-            <li><a href="#">Historial</a></li>
-            <li><a href="perfil.html">Perfil</a></li>
-        </ul>
-    </nav>
+    <div class="app-layout">
+        
+        <!-- MENÚ LATERAL -->
+        <nav class="main-nav" aria-label="Menú principal">
+            <ul>
+                <li>
+                    <a href="../pages/entrenar.html" class="nav-btn">
+                        <img src="../img/mancuerna.png" alt="" class="nav-icon">
+                        <span>ENTRENAR</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="../pages/rutinas.html" class="nav-btn">
+                        <img src="../img/registro.png" alt="" class="nav-icon">
+                        <span>RUTINAS</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="../pages/historial.html" class="nav-btn">
+                        <img src="../img/historial.png" alt="" class="nav-icon">
+                        <span>HISTORIAL</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="../pages/progreso.html" class="nav-btn">
+                        <img src="../img/progreso.png" alt="" class="nav-icon">
+                        <span>PROGRESO</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="../pages/perfil.html" class="nav-btn tarjeta-activa">
+                        <img src="../img/perfil.png" alt="" class="nav-icon">
+                        <span>PERFIL</span>
+                    </a>
+                </li>
+            </ul>
+        </nav>
 
-    <main>
+        <main class="main-content">
+            
+            <div class="content-header">
+                <h1>PROGRESO</h1>
+            </div>
 
-        <section class="resumen-general">
+            <!-- Grid principal de la sección de progreso -->
+            <div class="progreso-grid">
+                
+                <!-- Tarjeta 1: Resumen General -->
+                <article class="tarjeta-progreso">
+                    <h2>Resumen General</h2>
+                    <div class="progreso-bar-container">
+                        <div class="progreso-info-text">
+                            <span>Progreso General</span>
+                            <span class="highlight">68 %</span>
+                        </div>
+                        <div class="barra-porcentaje">
+                            <div class="progreso-fill" style="width: 68%;"></div>
+                        </div>
+                    </div>
+                    
+                    <div class="stats-row">
+                        <div class="stat-box">
+                            <span class="stat-label">Días activos</span>
+                            <span class="stat-value">28</span>
+                        </div>
+                        <div class="stat-box">
+                            <span class="stat-label">Racha actual</span>
+                            <span class="stat-value">7 Días</span>
+                        </div>
+                        <div class="stat-box">
+                            <span class="stat-label">Entrenamientos</span>
+                            <span class="stat-value">24</span>
+                        </div>
+                    </div>
+                </article>
 
-            <article>
+                <!-- Tarjeta 2: Evolución Física -->
+                <article class="tarjeta-progreso">
+                    <h2>Evolución Física</h2>
+                    <div class="evo-metrics">
+                        <div class="evo-badge"><span>90.5 KG</span></div>
+                        <div class="evo-badge"><span>7 Días</span></div>
+                        <div class="evo-badge"><span>18.5 %</span></div>
+                    </div>
+                    <div class="chart-placeholder">
+                        <!-- Simulación gráfica limpia o espacio para canvas/imagen -->
+                        <div class="line-chart-mock"></div>
+                    </div>
+                </article>
 
-                <h2>Resumen General</h2>
-
-                <p>Tu progreso semanal</p>
-
-            </article>
-
-        </section>
-
-        <section class="estadisticas-dashboard">
-
-            <article class="tarjeta">
-
-                <h3>Entrenamientos</h3>
-
-                <p>28</p>
-
-            </article>
-
-            <article class="tarjeta">
-
-                <h3>Días activos</h3>
-
-                <p>7</p>
-
-            </article>
-
-            <article class="tarjeta">
-
-                <h3>Calorías</h3>
-
-                <p>2450 kcal</p>
-
-            </article>
-
-        </section>
-
-        <section class="progreso-fisico">
-
-            <article>
-
-                <h3>Evolución Física</h3>
-
-                <img src="../img/grafico-peso.png"
-                     alt="Gráfico de evolución del peso corporal">
-
-            </article>
-
-        </section>
-
-        <section class="avance-semanal">
-
-            <article>
-
-                <h3>Avance Semanal</h3>
-
-                <label for="semana">
-                    Seleccionar semana:
-                </label>
-
-                <select id="semana" name="semana">
-
-                    <option selected>
-                        Semana 1
-                    </option>
-
-                    <option>
-                        Semana 2
-                    </option>
-
-                    <option>
-                        Semana 3
-                    </option>
-
-                </select>
-
-                <br><br>
-
-                <img src="../img/grafico-avance.png"
-                     alt="Gráfico del avance semanal">
-
-            </article>
-
-        </section>
-
-    </main>
-
-    <footer>
-
-        <div class="footer-brand">
-
-            <img src="../img/logo-miprogreso.png" alt="Logotipo institucional de MiProgreso en pie de página">
-
-            <div class="social-links">
-
-                <a href="https://facebook.com" aria-label="Visítanos en Facebook">
-                    <img src="../img/facebook-icon.png" alt="Logo de Facebook">
-                </a>
-
-                <a href="https://instagram.com" aria-label="Visítanos en Instagram">
-                    <img src="../img/instagram-icon.png" alt="Logo de Instagram">
-                </a>
-
-                <a href="https://x.com" aria-label="Visítanos en X">
-                    <img src="../img/x-icon.png" alt="Logo de X">
-                </a>
+                <!-- Tarjeta 3: Avance Semanal (Ocupa ancho completo o se adapta) -->
+                <article class="tarjeta-progreso tarjeta-ancho-completo">
+                    <div class="avance-header">
+                        <h2>Avance Semanal</h2>
+                        <div class="select-semana">
+                            <span>Semana 1</span>
+                        </div>
+                    </div>
+                    <div class="bar-chart-mock">
+                        <div class="bar-item" style="height: 100%;"><span>100%</span></div>
+                        <div class="bar-item" style="height: 80%;"><span>80%</span></div>
+                        <div class="bar-item" style="height: 90%;"><span>90%</span></div>
+                        <div class="bar-item" style="height: 85%;"><span>85%</span></div>
+                        <div class="bar-item" style="height: 60%;"><span>60%</span></div>
+                        <div class="bar-item" style="height: 75%;"><span>75%</span></div>
+                        <div class="bar-item" style="height: 80%;"><span>80%</span></div>
+                    </div>
+                    <p class="mensaje-motivacional">¡Sigue así, vas en buen camino!</p>
+                </article>
 
             </div>
 
+        </main>
+    </div>
+
+    <footer>
+        <div class="footer-brand">
+            <img src="../img/LOGO.png" alt="Logotipo MiProgreso">
+            <div class="social-links">
+                <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" aria-label="Redes Sociales">
+                    <img src="../img/redes.png" alt="Redes Sociales">
+                </a>
+            </div>
         </div>
 
         <div class="footer-columns">
-
             <article class="columna-texto">
-
-                <h4>Texto</h4>
-
-                <p>Información y soporte para optimizar tu rendimiento físico diario.</p>
-
-                <p>Control de pesos y repeticiones a tu alcance.</p>
-
-                <p>Plataforma web oficial de seguimiento.</p>
-
+                <p>Texto</p>
+                <p>Texto</p>
+                <p>Texto</p>
             </article>
-
             <article class="columna-texto">
-
-                <h4>Texto</h4>
-
-                <p>Términos y condiciones de uso de la comunidad.</p>
-
-                <p>Políticas de privacidad y manejo de datos personales.</p>
-
-                <p>Preguntas frecuentes sobre tus rutinas.</p>
-
+                <p>Texto</p>
+                <p>Texto</p>
+                <p>Texto</p>
             </article>
-
             <article class="columna-texto">
-
-                <h4>Texto</h4>
-
-                <p>Contacto directo con soporte técnico y entrenadores.</p>
-
-                <p>Ubicación de centros de entrenamiento asociados.</p>
-
-                <p>Versión actual del sistema web.</p>
-
+                <p>Texto</p>
+                <p>Texto</p>
+                <p>Texto</p>
             </article>
-
         </div>
-
     </footer>
 
 </body>
